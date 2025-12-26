@@ -29,3 +29,12 @@
 
 en:
   hello: "Hello world"
+
+  activerecord:
+    errors:
+      models:
+        product:
+          attributes:
+            title:
+              too_short: "is too short (minimum is 10 characters)"
+              taken: "has already been used by another product"
