@@ -24,15 +24,15 @@ class LineItemsController < ApplicationController
   # POST /line_items or /line_items.json
   def create
     product = Product.find(params[:product_id])
-    @line_item = @cart.line_items.build(product: product)
+    @line_item = @cart.add_product(product)
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart,
-        notice: "Line item was successfully created." }
+        format.html { redirect_to @line_item.cart }
         format.json { render :show,
         status: :created, location: @line_item }
 
+        # Reset the session counter to zero - playtime chapter 9
         session[:counter] = 0
 
       else
@@ -57,12 +57,13 @@ class LineItemsController < ApplicationController
     end
   end
 
-  # DELETE /line_items/1 or /line_items/1.json
-  def destroy
-    @line_item.destroy!
+    # DELETE /line_items/1 or /line_items/1.json
+    def destroy
+      @cart = @line_item.cart # get the cart before destroying the line item - Playtime chapter 10
+      @line_item.destroy!
 
-    respond_to do |format|
-      format.html { redirect_to line_items_path, notice: "Line item was successfully destroyed.", status: :see_other }
+      respond_to do |format|
+      format.html { redirect_to @cart, notice: "Item removed successfully.", status: :see_other }
       format.json { head :no_content }
     end
   end
@@ -75,6 +76,6 @@ class LineItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def line_item_params
-      params.expect(line_item: [ :product_id, :cart_id ])
+      params.expect(line_item: [ :product_id ])
     end
 end

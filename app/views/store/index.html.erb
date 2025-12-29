@@ -13,7 +13,7 @@
       Your Pragmatic Catalog
     </h1>
 
-    <% if @counter > 5 %>
+    <% if @counter && @counter > 5 %>
       <span class="text-sm text-gray-500">
         <%= pluralize(@counter, "visit") %>
       </span>
@@ -26,11 +26,11 @@
       <% @products.each do |product| %>
         <% cache product do %>
           <li class="flex mb-6">
-            <%= image_tag(
-              product.image,
-              class: "object-contain w-40 h-48 shadow mr-6"
-            ) %>
-
+            <% if product.image.attached? %>
+              <%= image_tag product.image, class: "object-contain w-40 h-48 shadow mr-6" %>
+            <% else %>
+              <div class="w-40 h-48 bg-gray-200 mr-6 flex items-center justify-center">No Image</div>
+            <% end %>    
             <div>
               <h2 class="font-bold text-lg mb-3">
                 <%= product.title %>
