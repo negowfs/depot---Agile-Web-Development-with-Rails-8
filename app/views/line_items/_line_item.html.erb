@@ -1,12 +1,26 @@
-<div id="<%= dom_id line_item %>" class="w-full sm:w-auto my-5 space-y-5">
-  <div>
-    <strong class="block font-medium mb-1">Product:</strong>
-    <%= line_item.product_id %>
-  </div>
-  <div>
-    <strong class="block font-medium mb-1">Cart:</strong>
-    <%= line_item.cart_id %>
-  </div>
+<% if line_item == @current_item %>
+  <tr class="line-item-highlight">
+<% else %>
+  <tr>
+<% end %>
+  <td class="text-right">
+    <%= line_item.quantity %>
+  </td>
 
-  <%= button_to 'Remove Item', line_item, method: :delete, data: { confirm: 'Are you sure' } %>
-</div>
+  <td>&times;</td>
+
+  <td class="pr-2">
+    <%= line_item.product.title %>
+  </td>
+
+  <td class="text-right font-bold">
+    <%= number_to_currency(line_item.total_price) %>
+  </td>
+
+  <td class="pl-2">
+    <%= button_to "-",
+          decrement_line_item_path(line_item),
+          method: :patch,
+          class: "text-sm px-2" %>
+  </td>
+</tr>

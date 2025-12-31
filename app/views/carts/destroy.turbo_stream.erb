@@ -1,0 +1,8 @@
+<%# Play Time - Chapter 11 %>
+<%= turbo_stream.replace "cart" do %>
+  <div id="cart"></div>
+<% end %>
+
+<%= turbo_stream.replace "notice" do %>
+  <%= render "store/notice", notice: "Your cart is empty." %>
+<% end %>

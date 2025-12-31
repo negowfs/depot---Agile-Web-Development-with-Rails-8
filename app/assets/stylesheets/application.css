@@ -8,3 +8,15 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+@keyframes product-highlight {
+  0% {
+    background-color: #bbf7d0; /* verde claro */
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.product-highlight {
+  animation: product-highlight 1.2s ease-out;
+}

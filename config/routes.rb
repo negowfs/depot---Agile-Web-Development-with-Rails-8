@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   resources :carts
   root "store#index", as: "store_index"
   resources :products
+  resources :line_items do
+    member do
+      patch :decrement
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
