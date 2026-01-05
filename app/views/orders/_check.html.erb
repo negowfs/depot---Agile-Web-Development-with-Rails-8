@@ -1,14 +1,11 @@
-<fieldset
-  data-payment-target="additionalFields"
-  data-type="check"
->
+<div data-payment-target="check" style="display: none">
   <div class="my-5">
-    <%= form.label :routing_number %>
+    <%= form.label :routing_number, "Routing number" %>
     <%= form.text_field :routing_number, class: "input-field" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :account_number %>
-    <%= form.password_field :account_number, class: "input-field" %>
+    <%= form.label :account_number, "Account number" %>
+    <%= form.text_field :account_number, class: "input-field" %>
   </div>
-</fieldset>
+</div>

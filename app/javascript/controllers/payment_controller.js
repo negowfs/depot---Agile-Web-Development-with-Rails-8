@@ -1,18 +1,22 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="payment"
 export default class extends Controller {
-  static targets = ["selection", "additionalFields"]
+  static targets = ["selection", "check", "cc", "po"]
 
-  initialize() {
+  connect() {
     this.showAdditionalFields()
   }
 
   showAdditionalFields() {
-    const selection = this.selectionTarget.value
+    const selected = this.selectionTarget.value
 
-    for (const fields of this.additionalFieldsTargets) {
-      fields.disabled = fields.hidden = (fields.dataset.type !== selection)
-    }
+    this.checkTarget.style.display =
+      selected === "Check" ? "block" : "none"
+
+    this.ccTarget.style.display =
+      selected === "Credit card" ? "block" : "none"
+
+    this.poTarget.style.display =
+      selected === "Purchase order" ? "block" : "none"
   }
 }
