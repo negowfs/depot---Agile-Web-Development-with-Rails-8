@@ -15,7 +15,8 @@ pragprog:
   description: Journey to Mastery, 20th Anniversary Edition (2nd Edition)
   price: 39.99
 
-ruby: # Play Time - Chapter 10
+# Play Time - Chapter 10
+ruby: 
   title: Programming Ruby 1.9 & 2.0
   description: The Definitive Guide to Ruby Programming Language
   price: 49.99

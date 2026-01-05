@@ -91,9 +91,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy product" do
     assert_raises ActiveRecord::RecordNotDestroyed do
-      delete product_url(products(:two))
+      delete product_url(products(:ruby))
     end
 
-    assert Product.exists?(products(:two).id)
+    assert Product.exists?(products(:ruby).id)
   end
 end

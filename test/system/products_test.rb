@@ -16,7 +16,10 @@ class ProductsTest < ApplicationSystemTestCase
 
     fill_in "Description", with: @product.description
     fill_in "Price", with: @product.price
-    fill_in "Title", with: @product.title
+    fill_in "Title", with: "Programming Ruby Book"
+
+    attach_file "Image", Rails.root.join("test/fixtures/files/ruby.jpg")
+
     click_on "Create Product"
 
     assert_text "Product was successfully created"
@@ -29,7 +32,7 @@ class ProductsTest < ApplicationSystemTestCase
 
     fill_in "Description", with: @product.description
     fill_in "Price", with: @product.price
-    fill_in "Title", with: @product.title
+    fill_in "Title", with: "Programming Ruby Book Secund Edition"
     click_on "Update Product"
 
     assert_text "Product was successfully updated"
