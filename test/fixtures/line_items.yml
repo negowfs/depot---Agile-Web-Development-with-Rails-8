@@ -2,12 +2,12 @@
 
 one:
   product: ruby
-  cart: one
+  order: one
   quantity: 1
   price: 19.99
 
 two:
   product: pragprog
-  cart: one
+  order: one
   quantity: 1
   price: 19.99

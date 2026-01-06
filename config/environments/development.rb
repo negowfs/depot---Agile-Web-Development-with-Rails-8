@@ -81,4 +81,7 @@ Rails.application.configure do
     password: "secret",
     enable_starttls_auto: true
   }
+
+  # Save emails as files in tmp/mails
+  config.action_mailer.delivery_method = :file
 end

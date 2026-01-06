@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+  allow_unauthenticated_access only: %i[ create ]
   include CurrentCart
 
   before_action :set_cart, only: %i[create]
@@ -47,14 +48,17 @@ class LineItemsController < ApplicationController
   end
 
   def destroy
-    @cart = @line_item.cart
-    @line_item.destroy!
+    @line_item = LineItem.find(params[:id])
+    cart = @line_item.cart
+    @line_item.destroy
 
-    respond_to do |format|
-      format.html { redirect_to @cart, notice: "Item removed successfully.", status: :see_other }
-      format.json { head :no_content }
+    if cart
+      redirect_to cart_url(cart)
+    else
+      redirect_to store_index_url
     end
   end
+
 
   def decrement
     @line_item = LineItem.find(params[:id])
