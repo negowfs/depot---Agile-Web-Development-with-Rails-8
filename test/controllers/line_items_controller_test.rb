@@ -21,7 +21,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
       post line_items_url, params: { product_id: products(:pragprog).id }
   end
 
-    assert_redirected_to cart_url(Cart.last)
+    assert_redirected_to cart_url(Cart.last, locale: "en")
 
     follow_redirect!
     assert_select "h1", "Showing cart"
@@ -41,7 +41,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
   test "should update line_item" do
     patch line_item_url(@line_item),
       params: { line_item: { product_id: @line_item.product_id } }
-    assert_redirected_to line_item_url(@line_item)
+    assert_redirected_to line_item_url(@line_item, locale: "en")
   end
 
   test "should destroy line_item" do
@@ -51,7 +51,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
       delete line_item_url(@line_item)
     end
 
-    assert_redirected_to store_index_url
+    assert_redirected_to store_index_url(locale: "en")
   end
 
   test "should create line_item via turbo-stream" do

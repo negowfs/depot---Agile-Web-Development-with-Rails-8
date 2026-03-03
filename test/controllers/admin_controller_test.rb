@@ -12,6 +12,6 @@ class AdminControllerTest < ActionDispatch::IntegrationTest
   test "should be redirected if not logged in" do
     get admin_url
 
-    assert_redirected_to new_session_url
+    assert_redirected_to new_session_url(locale: "en")
   end
 end

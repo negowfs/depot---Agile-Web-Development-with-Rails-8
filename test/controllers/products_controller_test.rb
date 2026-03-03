@@ -37,7 +37,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get new_product_url
     assert_response :success
 
-    assert_select "form[action=?][method=?]", products_path, "post" do
+    assert_select "form[action=?][method=?]", products_path(locale: "en"), "post" do
       assert_select "input[name=?]", "product[title]"
       assert_select "textarea[name=?]", "product[description]"
       assert_select "input[name=?]", "product[price]"
@@ -57,7 +57,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       }
     end
 
-    assert_redirected_to product_url(Product.last)
+    assert_redirected_to product_url(Product.last, locale: "en")
   end
 
   test "should show product" do
@@ -74,7 +74,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get edit_product_url(@product)
     assert_response :success
 
-    assert_select "form[action=?]", product_path(@product)
+    assert_select "form[action=?]", product_path(@product, locale: "en")
   end
 
   test "should update product" do
@@ -87,7 +87,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       }
     }
 
-    assert_redirected_to product_url(@product)
+    assert_redirected_to product_url(@product, locale: "en")
   end
 
   test "should destroy product" do

@@ -28,7 +28,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       }
   end
 
-    assert_redirected_to users_url
+    assert_redirected_to users_url(locale: "en")
   end
 
   test "should show user" do
@@ -51,7 +51,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       }
     }
 
-    assert_redirected_to users_url
+    assert_redirected_to users_url(locale: "en")
   end
 
   test "should destroy user" do
@@ -59,6 +59,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       delete user_url(@user)
     end
 
-    assert_redirected_to users_url
+    assert_redirected_to users_url(locale: "en")
   end
 end

@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   scope "(:locale)" do
     resources :orders
-    resources :line_items
+    resources :line_items do
+      patch :decrement, on: :member
+    end
     resources :carts
 
     root "store#index", as: "store_index", via: :all
