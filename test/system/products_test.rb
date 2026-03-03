@@ -3,15 +3,16 @@ require "application_system_test_case"
 class ProductsTest < ApplicationSystemTestCase
   setup do
     @product = products(:one)
+    login_as users(:one)
   end
 
   test "visiting the index" do
-    visit products_url
+    visit products_path
     assert_selector "h1", text: "Products"
   end
 
   test "should create product" do
-    visit products_url
+    visit products_path
     click_on "New product"
 
     fill_in "Description", with: @product.description
@@ -27,7 +28,7 @@ class ProductsTest < ApplicationSystemTestCase
   end
 
   test "should update Product" do
-    visit product_url(@product)
+    visit product_path(@product)
     click_on "Edit this product", match: :first
 
     fill_in "Description", with: @product.description
@@ -40,7 +41,7 @@ class ProductsTest < ApplicationSystemTestCase
   end
 
   test "should destroy Product" do
-    visit product_url(@product)
+    visit product_path(@product)
     accept_confirm { click_on "Destroy this product", match: :first }
 
     assert_text "Product was successfully destroyed"

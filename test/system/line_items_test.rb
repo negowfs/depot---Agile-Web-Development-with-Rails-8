@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class LineItemsTest < ApplicationSystemTestCase
   test "adding a product to the cart" do
-    visit store_index_url
+    visit store_index_path
 
     click_on "Add to Cart", match: :first
 

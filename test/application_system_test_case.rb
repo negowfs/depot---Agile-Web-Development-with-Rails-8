@@ -10,4 +10,12 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     driver_options.add_argument("--no-sandbox")
     driver_options.add_argument("--disable-dev-shm-usage")
   end
+
+  def login_as(user, password: "password")
+    visit new_session_path
+    fill_in "Enter your email address", with: user.email_address
+    fill_in "Enter your password", with: password
+    click_button "Sign in"
+    assert_no_selector "h1", text: "Sign in"
+  end
 end

@@ -4,7 +4,7 @@ class OrdersTest < ApplicationSystemTestCase
   include ActiveJob::TestHelper
 
   test "check dynamic fields" do
-    visit store_index_url
+    visit store_index_path
 
     click_on "Add to Cart", match: :first
     click_on "Checkout"
@@ -35,7 +35,7 @@ class OrdersTest < ApplicationSystemTestCase
     LineItem.delete_all
     Order.delete_all
 
-    visit store_index_url
+    visit store_index_path
 
     click_on "Add to Cart", match: :first
     click_on "Checkout"

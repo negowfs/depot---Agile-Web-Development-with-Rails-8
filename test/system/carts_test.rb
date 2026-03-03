@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class CartsTest < ApplicationSystemTestCase
   test "cart visibility toggles" do
-    visit store_index_url
+    visit store_index_path
 
     assert_no_selector "#cart"
 
@@ -16,7 +16,7 @@ class CartsTest < ApplicationSystemTestCase
   end
 
     test "cart is highlighted when updated" do
-    visit store_index_url
+    visit store_index_path
 
     click_on "Add to Cart", match: :first
 
