@@ -1,0 +1,84 @@
+pt-BR:
+  layouts:
+    application:
+      title: "Biblioteca Pragmática"
+      home: "Início"
+      questions: "Perguntas Frequentes"
+      news: "Notícias"
+      contact: "Contato"
+
+  store:
+    index:
+      title_html: "Seu Catálogo Pragmatic"
+    product:
+      add_html: "Adicionar ao Carrinho"
+
+  carts:
+    cart:
+      title: "Seu Carrinho"
+      empty: "Esvaziar carrinho"
+      checkout: "Comprar"
+
+  number:
+    currency:
+      format:
+        unit: "R$"
+        precision: 2
+        separator: ","
+        delimiter: "."
+        format: "%u %n"
+
+  orders:
+    new:
+      legend: "Por favor, informe seus dados"
+
+    form:
+      name: "Nome"
+      address_html: "Endereço"
+      email: "E-mail"
+      pay_type: "Forma de pagamento"
+      pay_prompt_html: "Selecione uma forma de pagamento"
+      submit: "Finalizar pedido"
+
+      pay_types:
+        Check: "Cheque"
+        Credit card: "Cartão de crédito"
+        Purchase order: "Ordem de compra"
+
+    check:
+      routing_number: "Agência"
+      account_number: "Conta"
+
+    cc:
+      cc_number: "Número do cartão"
+      expiration_date: "Validade"
+
+    po:
+      po_number: "Número do pedido"
+    
+  
+  activerecord:
+    errors:
+      messages:
+        inclusion: "não está incluído na lista"
+        blank: "não pode ficar em branco"
+
+    models:
+      order: "Pedido"
+
+    attributes:
+      order:
+        address: "Endereço"
+        name: "Nome"
+        email: "E-mail"
+        pay_type: "Forma de pagamento"
+
+
+  errors:
+    template:
+      body: "Há problemas com os seguintes campos:"
+      header:
+        one: "1 erro impediu que este %{model} fosse salvo"
+        other: "%{count} erros impediram que este %{model} fosse salvo"
+
+  thanks: "Obrigado pelo seu pedido."

@@ -1,13 +1,18 @@
-<div data-payment-target="cc" style="display: none">
+<fieldset
+  data-payment-target="additionalFields"
+  data-type="Credit card">
+
   <div class="my-5">
-    <%= form.label :credit_card_number, "Credit card number" %>
-    <%= form.text_field :credit_card_number, class: "input-field" %>
+    <%= form.label :credit_card_number, t(".cc_number") %>
+    <%= form.password_field :credit_card_number, class: "input-field" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :expiration_date, "Expiration date" %>
+    <%= form.label :expiration_date, t(".expiration_date") %>
     <%= form.text_field :expiration_date,
-          placeholder: "MM/YY",
-          class: "input-field" %>
+          class: "input-field",
+          size: 9,
+          placeholder: "e.g. 03/22" %>
   </div>
-</div>
+
+</fieldset>
