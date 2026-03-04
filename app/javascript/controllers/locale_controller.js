@@ -7,4 +7,8 @@ export default class extends Controller {
   initialize() {
     this.submitTarget.style.display = "none"
   }
+
+  submit() {
+    this.element.requestSubmit()
+  }
 }

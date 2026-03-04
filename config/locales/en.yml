@@ -52,6 +52,15 @@ en:
       title_html: "Your Pragmatic Catalog"
     product:
       add_html: "Add to Cart"
+    questions:
+      title: "Questions"
+      body: "Frequently asked questions will appear here."
+    news:
+      title: "News"
+      body: "Latest news will appear here."
+    contact:
+      title: "Contact"
+      body: "Contact details will appear here."
 
   carts:
     cart:
@@ -97,3 +106,6 @@ en:
       po_number: "PO number"
 
   thanks: "Thank you for your order."
+
+  i18n:
+    translation_not_available: "%{locale} translation not available"

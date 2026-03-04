@@ -12,6 +12,15 @@ es:
       title_html: "Su Catálogo de Pragmatic"
     product:
       add_html: "Añadir al Carrito"
+    questions:
+      title: "Preguntas"
+      body: "Las preguntas frecuentes aparecerán aquí."
+    news:
+      title: "Noticias"
+      body: "Las últimas noticias aparecerán aquí."
+    contact:
+      title: "Contacto"
+      body: "Los datos de contacto aparecerán aquí."
 
   carts:
     cart:
@@ -82,3 +91,6 @@ es:
         other: "%{count} errores han impedido que este %{model} se guarde"
 
   thanks: "Gracias por su pedido."
+
+  i18n:
+    translation_not_available: "Traducción de %{locale} no disponible"

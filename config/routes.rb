@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   resources :passwords, param: :token
 
   scope "(:locale)" do
+    get "questions" => "store#questions", as: :questions
+    get "news" => "store#news", as: :news
+    get "contact" => "store#contact", as: :contact
+
     resources :orders
     resources :line_items do
       patch :decrement, on: :member

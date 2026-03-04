@@ -12,6 +12,15 @@ pt-BR:
       title_html: "Seu Catálogo Pragmatic"
     product:
       add_html: "Adicionar ao Carrinho"
+    questions:
+      title: "Perguntas Frequentes"
+      body: "As perguntas frequentes aparecerão aqui."
+    news:
+      title: "Notícias"
+      body: "As últimas notícias aparecerão aqui."
+    contact:
+      title: "Contato"
+      body: "Os dados de contato aparecerão aqui."
 
   carts:
     cart:
@@ -82,3 +91,6 @@ pt-BR:
         other: "%{count} erros impediram que este %{model} fosse salvo"
 
   thanks: "Obrigado pelo seu pedido."
+
+  i18n:
+    translation_not_available: "Tradução de %{locale} não disponível"
